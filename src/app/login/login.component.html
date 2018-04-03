@@ -1,0 +1,12 @@
+<div class="card mx-auto w-50">
+  <div class="card-body">
+    <div class="card-title text-capitalize">Log In To Kosmetics Kingdom Manager</div>
+    <div class="card-subtitle mb-1 text-muted">Kosmetics Kingdom Manager</div>
+    <hr>
+    <form #f="ngForm" class="d-flex flex-column" (ngSubmit)="onSignIn(f)">
+      <div class="form-group"><input type="text" class="form-control" placeholder="Username" name="username" ngModel required></div>
+      <div class="form-group"><input type="password" class="form-control" placeholder="Password" password="password" ngModel name="password" required></div>
+      <button class="btn btn-primary w-50 align-self-center">Login</button>
+    </form>
+  </div>
+</div>

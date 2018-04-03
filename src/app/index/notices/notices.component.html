@@ -1,0 +1,2 @@
+<h1 class="card-title">Notices</h1>
+<div class="list-group"><a *ngFor="let nt of notices" routerLink="/edit/{{nt._id}}" class="list-group-item list-group-item-action"><app-notice [notice]="nt"></app-notice></a></div>

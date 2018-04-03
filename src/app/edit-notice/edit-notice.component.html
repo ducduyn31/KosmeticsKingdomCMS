@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="row mt-5" *ngIf="currentNotice">
+  <div class="col-md-6 col-sm-12">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="form-group row">
+        <label for="notice_id" class="col-sm-2 col-form-label">ID</label>
+        <div class="col-sm-10"><input type="text" class="form-control-plaintext" value="{{currentNotice._id}}" id="notice_id" readonly></div>
+        <label for="notice_date" class="col-sm-2 col-form-label">Created Date</label>
+        <div class="col-sm-10"><input type="text" class="form-control-plaintext" value="{{currentNotice.date | toDateFormat}}" readonly id="notice_date"></div>
+      </div>
+      <div class="form-group row">
+        <label for="notice_subject" class="col-sm-2 col-form-label">Subject</label>
+        <div class="col-sm-10"><input type="text" class="form-control" [(ngModel)]="currentNotice.subject" id="notice_subject" name="subject"></div>
+        <label for="notice_author" class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-10"><input type="text" class="form-control" [(ngModel)]="currentNotice.author" id="notice_author" name="author"></div>
+
+        <ngx-codemirror [(ngModel)]="currentNotice.rawContent" name="rawContent" class="form-control" [config]="{lineNumbers: true, lineWrapping: false, autofocus: true}"></ngx-codemirror>
+      </div>
+
+      <button class="btn" type="submit">Save Changes</button>
+    </form>
+  </div>
+  <div class="preview col-md-6" [innerHTML]="currentNotice.rawContent | keepHtml"></div>
+</div>

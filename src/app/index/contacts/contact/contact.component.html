@@ -1,0 +1,23 @@
+<ul class="list-inline">
+  <li class="list-inline-item"><h5 class="text-dark">Name: </h5></li>
+  <li class="list-inline-item"><div class="text-left">{{contact.name}}</div></li>
+  <li class="list-inline-item"><h5 class="text-dark">Email: </h5></li>
+  <li class="list-inline-item"><div class="text-left">{{contact.email}}</div></li>
+</ul>
+<ul class="list-inline">
+  <li class="list-inline-item"><h5 class="text-dark">Title: </h5></li>
+  <li class="list-inline-item"><div class="text-left">{{contact.title}}</div></li>
+  <li class="list-inline-item" *ngIf="contact.tel"><h5 class="text-dark">Telephone: </h5></li>
+  <li class="list-inline-item" *ngIf="contact.tel"><div class="text-left">{{contact.tel}}</div></li>
+  <li class="list-inline-item" *ngIf="contact.company"><h5 class="text-dark">Company: </h5></li>
+  <li class="list-inline-item" *ngIf="contact.company"><div class="text-left">{{contact.company}}</div></li>
+</ul>
+
+<div class="card">
+  <div class="card-body">
+    <a class="text-dark h5" data-toggle="collapse" attr.data-target="#{{contact._id}}" aria-expanded="false" attr.aria-controls="{{contact._id}}">Description (Click here)</a>
+    <div class="collapse" id="{{contact._id}}">{{contact.description}}</div>
+  </div>
+</div>
+
+<button class="btn btn-outline-danger mt-3" (click)="onRequestDelete()">Delete this request</button>

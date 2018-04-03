@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/']">Kosmetics Kingdom</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="navbar-nav ml-auto mr-5">
+      <div class="nav-item dropdown">
+        <a [routerLink]="['/']" class="nav-link dropdown-toggle" id="userDetails" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+        <div class="dropdown-menu" aria-labelledby="userDetails">
+          <div class="dropdown-divider"></div>
+          <a routerLink="" class="dropdown-item" (click)="onLogout()">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
