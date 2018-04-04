@@ -19,6 +19,7 @@ import { ToDateFormatPipe } from './to-date-format.pipe';
 import { EditNoticeComponent } from './edit-notice/edit-notice.component';
 import {CodemirrorModule} from "@nomadreservations/ngx-codemirror";
 import { KeepHtmlPipe } from './keep-html.pipe';
+import { NewNoticeComponent } from './new-notice/new-notice.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { KeepHtmlPipe } from './keep-html.pipe';
     ContactComponent,
     ToDateFormatPipe,
     EditNoticeComponent,
-    KeepHtmlPipe
+    KeepHtmlPipe,
+    NewNoticeComponent
   ],
   imports: [
     BrowserModule,

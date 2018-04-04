@@ -21,5 +21,4 @@ export class NoticesComponent implements OnInit {
       }
     )
   }
-
 }

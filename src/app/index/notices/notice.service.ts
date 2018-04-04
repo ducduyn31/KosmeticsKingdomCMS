@@ -37,4 +37,8 @@ export class NoticeService {
   removeNotice(notice: Notice): Observable<any> {
     return this._http.delete(this.noticeServer, {params: {token: localStorage.getItem('token'), notice: notice._id}});
   }
+
+  submitNotice(subject: string, author: string, rawContent: string): Observable<any> {
+    return this._http.post(this.noticeServer, { subject, author, rawContent}, {params: {token: localStorage.getItem('token')}});
+  }
 }
