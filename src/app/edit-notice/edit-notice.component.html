@@ -19,6 +19,7 @@
       </div>
 
       <button class="btn" type="submit">Save Changes</button>
+      <button class="btn btn-danger" type="button" (click)="onRemoveNotice()">Remove Notice</button>
     </form>
   </div>
   <div class="preview col-md-6" [innerHTML]="currentNotice.rawContent | keepHtml"></div>

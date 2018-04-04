@@ -33,4 +33,8 @@ export class NoticeService {
   saveNoticeChanges(notice: Notice): Observable<any> {
     return this._http.put(this.noticeServer,{notice}, {params: {token: localStorage.getItem('token')}});
   }
+
+  removeNotice(notice: Notice): Observable<any> {
+    return this._http.delete(this.noticeServer, {params: {token: localStorage.getItem('token'), notice: notice._id}});
+  }
 }

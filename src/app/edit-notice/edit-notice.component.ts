@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NoticeService} from "../index/notices/notice.service";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Notice} from "../index/notices/notice";
 import {Editor} from "codemirror";
 
@@ -12,7 +12,7 @@ import {Editor} from "codemirror";
 })
 export class EditNoticeComponent implements OnInit {
 
-  constructor(private noticeSv: NoticeService, private _route: ActivatedRoute) {
+  constructor(private noticeSv: NoticeService, private _route: ActivatedRoute, private _router: Router) {
   }
 
   currentNotice: Notice = null;
@@ -36,6 +36,13 @@ export class EditNoticeComponent implements OnInit {
     this.noticeSv.saveNoticeChanges(this.currentNotice).subscribe(res => {
       if (res['success']) alert('Changed Successfully');
     });
+  }
+
+  onRemoveNotice() {
+    this.noticeSv.removeNotice(this.currentNotice).subscribe(res => {
+      if (res['success']) alert('Remove successfully!');
+      this._router.navigate(['/'], {});
+    })
   }
 
 }
