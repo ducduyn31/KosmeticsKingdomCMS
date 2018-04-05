@@ -1,5 +1,5 @@
-const AUTH_SERVER = 'http://localhost:3000/auth';
-const CUSTOMER_SUPPORT_SERVER = 'http://localhost:3000/contact';
-const NOTICES_SERVER = 'http://localhost:3000/notice';
+const AUTH_SERVER = 'http://api.kosmetics.kr/auth';
+const CUSTOMER_SUPPORT_SERVER = 'http://api.kosmetics.kr/contact';
+const NOTICES_SERVER = 'http://api.kosmetics.kr/notice';
 
 export {AUTH_SERVER, CUSTOMER_SUPPORT_SERVER, NOTICES_SERVER};
